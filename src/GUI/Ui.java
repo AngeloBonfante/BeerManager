@@ -19,7 +19,6 @@ public class Ui extends JFrame implements MouseListener {
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        setBackground(Color.BLACK);
         getContentPane().setBackground(new Color(0,0,108));
 
         JPanel buttonMenu = new JPanel(new GridLayout(1,2,0,0));
@@ -38,17 +37,13 @@ public class Ui extends JFrame implements MouseListener {
             buttonRecipe.setBorderPainted(false);
             buttonStockpile.setBackground(Color.YELLOW);
             buttonRecipe.setBackground(Color.YELLOW);
-
-
         /*END STYLING*/
 
         buttonMenu.add(buttonStockpile);
         buttonMenu.add(buttonRecipe);
 
 
-
         add(buttonMenu, BorderLayout.SOUTH);
-
         setVisible(true);
     }
 
@@ -56,6 +51,7 @@ public class Ui extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == buttonStockpile){
             System.out.println("Stockpile");
+            new stockpileUi();
         }if (e.getSource() == buttonRecipe){
             System.out.println("Recipe");
         }
