@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Setting up">
-      <change afterPath="$PROJECT_DIR$/src/Brewery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Recipe/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Recipe/Recipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stockpile/Beer.java" afterDir="false" />
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Main logic">
+      <change afterPath="$PROJECT_DIR$/src/GUI/Ui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -20,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699489593513</updated>
-      <workItem from="1699489594508" duration="6689000" />
+      <workItem from="1699489594508" duration="10353000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -75,7 +72,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699490054859</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Main logic">
+      <option name="closed" value="true" />
+      <created>1699496858719</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699496858719</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up" />
+    <MESSAGE value="Main logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main logic" />
   </component>
 </project>
