@@ -1,21 +1,20 @@
 package GUI;
 
-import org.w3c.dom.css.RGBColor;
-
+import Stockpile.Beer;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class Ui extends JFrame implements MouseListener {
 
+    Brewery brewery;
     JButton buttonStockpile;
     JButton buttonRecipe;
 
-    public Ui() {
+    public Ui(Brewery brewery) {
         super("Brewery");
+        this.brewery = brewery;
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

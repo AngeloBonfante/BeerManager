@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class addBeerUi extends JFrame implements ActionListener {
 
+
     Beer newBeer;
     String styleName;
     String type;
@@ -33,30 +34,36 @@ public class addBeerUi extends JFrame implements ActionListener {
     JTextField recipeHopsField;
     JTextField recipeYeastField;
     JTextField recipeWaterField;
-    JTextField recipeSugarField;
+//    JTextField recipeSugarField;
     JTextField recipeExtraField;
+
+    JTextField recipeMaltAmountField;
+    JTextField recipeHopsAmountField;
+    JTextField recipeYeastAmountField;
+    JTextField recipeWaterAmountField;
+    JTextField recipeSugarAmountField;
+    JTextField recipeExtraAmountField;
 
     ArrayList<Ingredient> extraIngredients;
 
     JButton addIngredient;
-    JButton submit;
+    JButton submitRecipe;
+    JButton submitBeer;
 
 
-
-
-    public addBeerUi(){
+    public addBeerUi() {
         super("Add Beer");
         setSize(600, 600);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLayout(new BorderLayout());
 
-            WindowListener windowListener = new WindowAdapter() {
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    dispose();
-                }
-            };
-            addWindowListener(windowListener);
+        WindowListener windowListener = new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        };
+        addWindowListener(windowListener);
 
         JLabel styleNameLabel = new JLabel("Style Name");
         JLabel typeLabel = new JLabel("Type");
@@ -115,9 +122,16 @@ public class addBeerUi extends JFrame implements ActionListener {
         JLabel recipeMaltLabel = new JLabel("Malt");
         JLabel recipeHopsLabel = new JLabel("Hops");
         JLabel recipeYeastLabel = new JLabel("Yeast");
-        JLabel recipeWaterLabel = new JLabel("Water");
-        JLabel recipeSugarLabel = new JLabel("Sugar");
+//        JLabel recipeWaterLabel = new JLabel("Water");
+//        JLabel recipeSugarLabel = new JLabel("Sugar");
         JLabel recipeExtraLabel = new JLabel("Extra");
+
+        JLabel recipeMaltAmountLabel = new JLabel("Amount (Kg)");
+        JLabel recipeHopsAmountLabel = new JLabel("Amount (Kg)");
+        JLabel recipeYeastAmountLabel = new JLabel("Amount (Kg)");
+        JLabel recipeWaterAmountLabel = new JLabel("Water Amount (L)");
+        JLabel recipeSugarAmountLabel = new JLabel("Sugar Amount (g)");
+        JLabel recipeExtraAmountLabel = new JLabel("Amount (Kg/L)");
 
 
         recipeNameField = new JTextField();
@@ -134,10 +148,23 @@ public class addBeerUi extends JFrame implements ActionListener {
         recipeYeastField.setPreferredSize(new Dimension(140, 15));
         recipeWaterField = new JTextField();
         recipeWaterField.setPreferredSize(new Dimension(140, 15));
-        recipeSugarField = new JTextField();
-        recipeSugarField.setPreferredSize(new Dimension(140, 15));
+//        recipeSugarField = new JTextField();
+//        recipeSugarField.setPreferredSize(new Dimension(140, 15));
         recipeExtraField = new JTextField();
         recipeExtraField.setPreferredSize(new Dimension(140, 15));
+
+        recipeMaltAmountField = new JTextField();
+        recipeMaltAmountField.setPreferredSize(new Dimension(140, 15));
+        recipeHopsAmountField = new JTextField();
+        recipeHopsAmountField.setPreferredSize(new Dimension(140, 15));
+        recipeYeastAmountField = new JTextField();
+        recipeYeastAmountField.setPreferredSize(new Dimension(140, 15));
+        recipeWaterAmountField = new JTextField();
+        recipeWaterAmountField.setPreferredSize(new Dimension(140, 15));
+        recipeSugarAmountField = new JTextField();
+        recipeSugarAmountField.setPreferredSize(new Dimension(140, 15));
+        recipeExtraAmountField = new JTextField();
+        recipeExtraAmountField.setPreferredSize(new Dimension(140, 15));
 
         JPanel recipeNamePanel = new JPanel(new GridLayout());
         recipeNamePanel.add(recipeNameLabel);
@@ -154,45 +181,85 @@ public class addBeerUi extends JFrame implements ActionListener {
         recipeMaltPanel.add(recipeMaltField);
         recipeMaltPanel.setBackground(Color.GREEN);
         recipeMaltPanel.setPreferredSize(new Dimension(230, 20));
+        JPanel recipeMaltAmountPanel = new JPanel(new GridLayout());
+        recipeMaltAmountPanel.add(recipeMaltAmountLabel);
+        recipeMaltAmountPanel.add(recipeMaltAmountField);
+        recipeMaltAmountPanel.setBackground(Color.GREEN);
+        recipeMaltAmountPanel.setPreferredSize(new Dimension(230, 20));
         JPanel recipeHopsPanel = new JPanel(new GridLayout());
         recipeHopsPanel.add(recipeHopsLabel);
         recipeHopsPanel.add(recipeHopsField);
         recipeHopsPanel.setBackground(Color.GREEN);
         recipeHopsPanel.setPreferredSize(new Dimension(230, 20));
+        JPanel recipeHopsAmountPanel = new JPanel(new GridLayout());
+        recipeHopsAmountPanel.add(recipeHopsAmountLabel);
+        recipeHopsAmountPanel.add(recipeHopsAmountField);
+        recipeHopsAmountPanel.setBackground(Color.GREEN);
+        recipeHopsAmountPanel.setPreferredSize(new Dimension(230, 20));
         JPanel recipeYeastPanel = new JPanel(new GridLayout());
         recipeYeastPanel.add(recipeYeastLabel);
         recipeYeastPanel.add(recipeYeastField);
         recipeYeastPanel.setBackground(Color.GREEN);
         recipeYeastPanel.setPreferredSize(new Dimension(230, 20));
-        JPanel recipeWaterPanel = new JPanel(new GridLayout());
-        recipeWaterPanel.add(recipeWaterLabel);
-        recipeWaterPanel.add(recipeWaterField);
-        recipeWaterPanel.setBackground(Color.GREEN);
-        recipeWaterPanel.setPreferredSize(new Dimension(230, 20));
-        JPanel recipeSugarPanel = new JPanel(new GridLayout());
-        recipeSugarPanel.add(recipeSugarLabel);
-        recipeSugarPanel.add(recipeSugarField);
-        recipeSugarPanel.setBackground(Color.GREEN);
-        recipeSugarPanel.setPreferredSize(new Dimension(230, 20));
+        JPanel recipeYeastAmountPanel = new JPanel(new GridLayout());
+        recipeYeastAmountPanel.add(recipeYeastAmountLabel);
+        recipeYeastAmountPanel.add(recipeYeastAmountField);
+        recipeYeastAmountPanel.setBackground(Color.GREEN);
+        recipeYeastAmountPanel.setPreferredSize(new Dimension(230, 20));
+//        JPanel recipeWaterPanel = new JPanel(new GridLayout());
+//        recipeWaterPanel.add(recipeWaterLabel);
+//        recipeWaterPanel.add(recipeWaterField);
+//        recipeWaterPanel.setBackground(Color.GREEN);
+//        recipeWaterPanel.setPreferredSize(new Dimension(230, 20));
+        JPanel recipeWaterAmountPanel = new JPanel(new GridLayout());
+        recipeWaterAmountPanel.add(recipeWaterAmountLabel);
+        recipeWaterAmountPanel.add(recipeWaterAmountField);
+        recipeWaterAmountPanel.setBackground(Color.GREEN);
+        recipeWaterAmountPanel.setPreferredSize(new Dimension(230, 20));
+//        JPanel recipeSugarPanel = new JPanel(new GridLayout());
+//        recipeSugarPanel.add(recipeSugarLabel);
+//        recipeSugarPanel.add(recipeSugarField);
+//        recipeSugarPanel.setBackground(Color.GREEN);
+//        recipeSugarPanel.setPreferredSize(new Dimension(230, 20));
+        JPanel recipeSugarAmountPanel = new JPanel(new GridLayout());
+        recipeSugarAmountPanel.add(recipeSugarAmountLabel);
+        recipeSugarAmountPanel.add(recipeSugarAmountField);
+        recipeSugarAmountPanel.setBackground(Color.GREEN);
+        recipeSugarAmountPanel.setPreferredSize(new Dimension(230, 20));
         JPanel recipeExtraPanel = new JPanel(new GridLayout());
         recipeExtraPanel.add(recipeExtraLabel);
         recipeExtraPanel.add(recipeExtraField);
         recipeExtraPanel.setBackground(Color.GREEN);
         recipeExtraPanel.setPreferredSize(new Dimension(230, 20));
+        JPanel recipeExtraAmountPanel = new JPanel(new GridLayout());
+        recipeExtraAmountPanel.add(recipeExtraAmountLabel);
+        recipeExtraAmountPanel.add(recipeExtraAmountField);
+        recipeExtraAmountPanel.setBackground(Color.GREEN);
+        recipeExtraAmountPanel.setPreferredSize(new Dimension(230, 20));
         JPanel addExtraIngredientPanel = new JPanel(new GridLayout());
         addIngredient = new JButton("Add Ingredient");
+        addIngredient.addActionListener(this);
         addExtraIngredientPanel.add(addIngredient);
         addExtraIngredientPanel.setBackground(Color.GREEN);
         addExtraIngredientPanel.setPreferredSize(new Dimension(230, 20));
+
         extraIngredients = new ArrayList<>();
 
-        JPanel submitPanel = new JPanel(new GridLayout());
-        submit = new JButton("Add Beer!");
-        submitPanel.add(submit);
-        submitPanel.setBackground(Color.GREEN);
-        submitPanel.setPreferredSize(new Dimension(230, 50));
+        submitRecipe = new JButton("Add Recipe!");
+        submitBeer = new JButton("Add Beer!");
+        submitBeer.addActionListener(this);
+        submitRecipe.addActionListener(this);
 
+        JPanel submitRecipePanel = new JPanel(new GridLayout());
+        submitRecipePanel.add(submitRecipe);
+        submitRecipePanel.setBackground(Color.GREEN);
+        submitRecipePanel.setPreferredSize(new Dimension(230, 50));
 
+        JPanel submitBeerPanel = new JPanel(new GridLayout());
+        submitBeerPanel.add(submitBeer);
+        submitBeerPanel.setBackground(Color.GREEN);
+        submitBeerPanel.setPreferredSize(new Dimension(230, 50));
+        submitBeer.setEnabled(false);
 
 
         JPanel beerPanel = new JPanel(new FlowLayout());
@@ -210,16 +277,23 @@ public class addBeerUi extends JFrame implements ActionListener {
         beerPanel.add(ibuPanel);
         beerPanel.add(volumePanel);
         beerPanel.add(pricePanel);
+        beerPanel.add(submitBeerPanel);
         recipePanel.add(recipeNamePanel);
         recipePanel.add(recipeDescriptionPanel);
         recipePanel.add(recipeMaltPanel);
+        recipePanel.add(recipeMaltAmountPanel);
         recipePanel.add(recipeHopsPanel);
+        recipePanel.add(recipeHopsAmountPanel);
         recipePanel.add(recipeYeastPanel);
-        recipePanel.add(recipeWaterPanel);
-        recipePanel.add(recipeSugarPanel);
+        recipePanel.add(recipeYeastAmountPanel);
+//        recipePanel.add(recipeWaterPanel);
+        recipePanel.add(recipeWaterAmountPanel);
+//        recipePanel.add(recipeSugarPanel);
+        recipePanel.add(recipeSugarAmountPanel);
         recipePanel.add(recipeExtraPanel);
+        recipePanel.add(recipeExtraAmountPanel);
         recipePanel.add(addExtraIngredientPanel);
-        recipePanel.add(submitPanel);
+        recipePanel.add(submitRecipePanel);
 
 
         add(beerPanel, BorderLayout.WEST);
@@ -229,6 +303,97 @@ public class addBeerUi extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        try {
 
+
+            if (e.getSource() == addIngredient) {
+                String name = recipeExtraField.getText();
+                double amount = Double.parseDouble(recipeExtraAmountField.getText());
+                Ingredient newIngredient = new Ingredient(name, amount, "KG/L");
+                extraIngredients.add(newIngredient);
+                recipeExtraField.setText("");
+                recipeExtraAmountField.setText("");
+
+                System.out.println(name + " " + amount + "KG/L");
+                System.out.println("Ingredient added!");
+            }
+
+            if (e.getSource() == submitRecipe) {
+
+                String name = recipeNameField.getText();
+                String description = recipeDescriptionField.getText();
+                String maltString = recipeMaltField.getText();
+                String hopsString = recipeHopsField.getText();
+                String yeastString = recipeYeastField.getText();
+//                String waterString = recipeWaterField.getText();
+//                String extraString = recipeExtraField.getText();
+
+                double maltAmount = Double.parseDouble(recipeMaltAmountField.getText());
+                double hopsAmount = Double.parseDouble(recipeHopsAmountField.getText());
+                double yeastAmount = Double.parseDouble(recipeYeastAmountField.getText());
+                double waterAmount = Double.parseDouble(recipeWaterAmountField.getText());
+                double sugarAmount = Double.parseDouble(recipeSugarAmountField.getText());
+//                double extraAmount = Double.parseDouble(recipeExtraAmountField.getText());
+
+                Ingredient malt = new Ingredient(maltString, maltAmount, "KG/L");
+                Ingredient hops = new Ingredient(hopsString, hopsAmount, "KG/L");
+                Ingredient yeast = new Ingredient(yeastString, yeastAmount, "KG/L");
+                Ingredient water = new Ingredient("Water", waterAmount, "KG/L");
+
+
+                newRecipe = new Recipe(name, malt, hops, yeast, water);
+
+                if(!extraIngredients.isEmpty()){
+                    for (Ingredient ingredient : extraIngredients) {
+                        newRecipe.addIngredient(ingredient);
+                    }
+                }
+
+                recipeNameField.setText("");
+                recipeDescriptionField.setText("");
+                recipeMaltField.setText("");
+                recipeHopsField.setText("");
+                recipeYeastField.setText("");
+                recipeWaterField.setText("");
+//                recipeSugarField.setText("");
+                recipeExtraField.setText("");
+
+                recipeMaltAmountField.setText("");
+                recipeHopsAmountField.setText("");
+                recipeYeastAmountField.setText("");
+                recipeWaterAmountField.setText("");
+                recipeSugarAmountField.setText("");
+                recipeExtraAmountField.setText("");
+
+                submitRecipe.setEnabled(false);
+                addIngredient.setEnabled(false);
+                submitBeer.setEnabled(true);
+                System.out.println("Recipe added!");
+            }
+            if (e.getSource() == submitBeer) {
+                styleName = styleNameField.getText().trim();
+                type = typeField.getText().trim();
+                abv = Double.parseDouble(abvField.getText().trim());
+                ibu = Double.parseDouble(ibuField.getText().trim());
+                volume = Double.parseDouble(volumeField.getText().trim());
+                price = Double.parseDouble(priceField.getText().trim());
+
+                newBeer = new Beer(styleName, type, abv, ibu, volume, price, newRecipe);
+
+                styleNameField.setText("");
+                typeField.setText("");
+                abvField.setText("");
+                ibuField.setText("");
+                volumeField.setText("");
+                priceField.setText("");
+
+                submitBeer.setEnabled(false);
+
+
+                System.out.println("Beer Added");
+            }
+        }catch (NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "Please fill all the fields with valid values!");
+        }
     }
 }
