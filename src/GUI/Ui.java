@@ -1,6 +1,6 @@
 package GUI;
 
-import Stockpile.Beer;
+import Brewery.Brewery;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -9,12 +9,14 @@ import java.awt.event.MouseListener;
 public class Ui extends JFrame implements MouseListener {
 
     Brewery brewery;
+
     JButton buttonStockpile;
     JButton buttonRecipe;
 
     public Ui(Brewery brewery) {
         super("Brewery");
         this.brewery = brewery;
+
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -50,7 +52,7 @@ public class Ui extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == buttonStockpile){
             System.out.println("Stockpile");
-            new stockpileUi();
+            new StockpileUi(brewery);
         }if (e.getSource() == buttonRecipe){
             System.out.println("Recipe");
         }

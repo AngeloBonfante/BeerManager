@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Add Beer UI">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="fixes">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Brewery/Brewery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Ui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/addBeerUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/addBeerUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/stockpileUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StockpileUi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +46,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -71,6 +75,8 @@
       <workItem from="1699959005495" duration="675000" />
       <workItem from="1699959796640" duration="414000" />
       <workItem from="1700028630660" duration="3700000" />
+      <workItem from="1700032553555" duration="5161000" />
+      <workItem from="1700109032280" duration="8923000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -104,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699561312213</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1700032764654</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700032764654</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +140,7 @@
     <MESSAGE value="Main logic" />
     <MESSAGE value="Styling" />
     <MESSAGE value="Add Beer UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Beer UI" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
 </project>

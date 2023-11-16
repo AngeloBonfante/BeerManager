@@ -1,6 +1,9 @@
+package Brewery;
+
 import Recipe.Recipe;
 import Stockpile.Beer;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Brewery {
     /*Uma cervejaria tem Estoque e Receitas*/
@@ -20,4 +23,7 @@ public class Brewery {
         this.Recipes.add(recipe);
     }
 
+    public ArrayList<Beer> getStockpile() {
+        return Stockpile;
+    }
 }

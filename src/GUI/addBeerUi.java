@@ -1,5 +1,6 @@
 package GUI;
 
+import Brewery.Brewery;
 import Recipe.Recipe;
 import Recipe.Ingredient;
 import Stockpile.Beer;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 public class addBeerUi extends JFrame implements ActionListener {
 
+    Brewery brewery;
 
     Beer newBeer;
     String styleName;
@@ -51,8 +53,9 @@ public class addBeerUi extends JFrame implements ActionListener {
     JButton submitBeer;
 
 
-    public addBeerUi() {
+    public addBeerUi(Brewery brewery) {
         super("Add Beer");
+        this.brewery = brewery;
         setSize(600, 600);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -389,8 +392,12 @@ public class addBeerUi extends JFrame implements ActionListener {
 
                 submitBeer.setEnabled(false);
 
-
+                this.brewery.addBeer(newBeer);
+                this.brewery.addRecipe(newRecipe);
                 System.out.println("Beer Added");
+                System.out.println(this.brewery.getStockpile().get(0).getStyleName());
+                new StockpileUi(brewery);
+                this.dispose();
             }
         }catch (NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Please fill all the fields with valid values!");
