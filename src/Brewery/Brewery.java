@@ -26,4 +26,7 @@ public class Brewery {
     public ArrayList<Beer> getStockpile() {
         return Stockpile;
     }
+    public ArrayList<Recipe> getRecipes() {
+        return Recipes;
+    }
 }

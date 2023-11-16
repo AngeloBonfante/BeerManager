@@ -55,6 +55,7 @@ public class Ui extends JFrame implements MouseListener {
             new StockpileUi(brewery);
         }if (e.getSource() == buttonRecipe){
             System.out.println("Recipe");
+            new RecipeUi(brewery.getRecipes());
         }
     }
 
