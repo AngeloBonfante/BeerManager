@@ -396,8 +396,8 @@ public class addBeerUi extends JFrame implements ActionListener {
                 this.brewery.addRecipe(newRecipe);
                 System.out.println("Beer Added");
                 System.out.println(this.brewery.getStockpile().get(0).getStyleName());
-                new StockpileUi(brewery);
                 this.dispose();
+                new StockpileUi(brewery);
             }
         }catch (NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Please fill all the fields with valid values!");

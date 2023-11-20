@@ -23,6 +23,14 @@ public class Brewery {
         this.Recipes.add(recipe);
     }
 
+    public void removeBeer(String beerName){
+        for (int i = 0; i < Stockpile.size(); i++) {
+            if(Stockpile.get(i).getStyleName().equalsIgnoreCase(beerName)){
+                Stockpile.remove(i);
+            }
+        }
+    }
+
     public ArrayList<Beer> getStockpile() {
         return Stockpile;
     }

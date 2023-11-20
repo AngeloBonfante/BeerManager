@@ -19,7 +19,7 @@ public class StockpileUi extends JFrame implements MouseListener {
     public StockpileUi(Brewery brewery) {
         super("Beer");
         this.brewery = brewery;
-        setSize(600, 600);
+        setSize(600, 650);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -140,11 +140,15 @@ public class StockpileUi extends JFrame implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() == buttonAddBeer){
             System.out.println("Add Beer");
+            this.dispose();
             new addBeerUi(brewery);
-            StockpileUi.this.dispose();
 
         }if (e.getSource() == buttonRemoveBeer){
             System.out.println("Remove Beer");
+            String beerName = JOptionPane.showInputDialog("Enter the name of the beer to remove:");
+            brewery.removeBeer(beerName);
+            this.dispose();
+            new StockpileUi(brewery);
         }
     }
 

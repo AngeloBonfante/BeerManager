@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Beer list">
-      <change afterPath="$PROJECT_DIR$/src/GUI/RecipeUi.java" afterDir="false" />
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="&#10;Recipe List">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Brewery/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Brewery/Brewery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Ui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RecipeUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StockpileUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StockpileUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/addBeerUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/addBeerUi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +75,9 @@
       <workItem from="1699959796640" duration="414000" />
       <workItem from="1700028630660" duration="3700000" />
       <workItem from="1700032553555" duration="5161000" />
-      <workItem from="1700109032280" duration="12055000" />
+      <workItem from="1700109032280" duration="13491000" />
+      <workItem from="1700297188366" duration="6068000" />
+      <workItem from="1700450535373" duration="654000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -123,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700126878576</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="&#10;Recipe List">
+      <option name="closed" value="true" />
+      <created>1700130011782</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700130011782</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +159,7 @@
     <MESSAGE value="Add Beer UI" />
     <MESSAGE value="fixes" />
     <MESSAGE value="Beer list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Beer list" />
+    <MESSAGE value="&#10;Recipe List" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Recipe List" />
   </component>
 </project>

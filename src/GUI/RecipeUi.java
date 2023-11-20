@@ -14,7 +14,7 @@ import java.util.List;
 public class RecipeUi extends JFrame {
     public RecipeUi(List<Recipe> recipes) {
         super("Recipes");
-        setSize(600, 600);
+        setSize(700, 700);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLayout(new BorderLayout());
         WindowListener windowListener = new WindowAdapter() {
@@ -26,10 +26,9 @@ public class RecipeUi extends JFrame {
         addWindowListener(windowListener);
 
         JPanel contentList = new JPanel(new GridLayout(0,2,0,0));
-        contentList.setPreferredSize(new Dimension(550, 500));
-        JScrollPane recipeListScroll = new JScrollPane(contentList);
-        recipeListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        recipeListScroll.setPreferredSize(new Dimension(600, 500));
+        //contentList.setPreferredSize(new Dimension(550, 600));
+
+
         contentList.setBackground(Color.BLUE);
 
         Font labelFont = new Font("Arial", Font.BOLD, 14);
@@ -40,7 +39,7 @@ public class RecipeUi extends JFrame {
 //            JPanel lowerPanel = new JPanel(new GridLayout(0,1,0,0));
 
             JPanel recipeCell = new JPanel(new GridLayout(0,1,0,0));
-            recipeCell.setPreferredSize(new Dimension(250, 400));
+            recipeCell.setPreferredSize(new Dimension(250, 300));
             recipeCell.setBackground(Color.WHITE);
             recipeCell.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
@@ -58,32 +57,43 @@ public class RecipeUi extends JFrame {
             textAreaDescription.setEditable(false);
             textAreaDescription.setOpaque(false);
             textAreaDescription.setBorder(null);
-            recipeCell.add(textAreaDescription);
+//            recipeCell.add(textAreaDescription);
+
+            JScrollPane descPane = new JScrollPane(textAreaDescription);
+            descPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+            descPane.setPreferredSize(new Dimension(250, 100));
+            recipeCell.add(descPane);
+
+            JPanel ingredientsPanel = new JPanel(new GridLayout(0,2,0,0));
 
             JLabel labelMaltName = new JLabel("Malt: " + recipe.getMalt().getName() + recipe.getMalt().getQuantity() + " kg");
             labelMaltName.setFont(labelFont);
             labelMaltName.setForeground(Color.BLUE);
             labelMaltName.setHorizontalAlignment(JLabel.CENTER);
-            recipeCell.add(labelMaltName);
-
+//            recipeCell.add(labelMaltName);
+            ingredientsPanel.add(labelMaltName);
 
             JLabel labelHopsName = new JLabel("Hops: " + recipe.getHops().getName() + recipe.getHops().getQuantity() + " kg");
             labelHopsName.setFont(labelFont);
             labelHopsName.setForeground(Color.BLUE);
             labelHopsName.setHorizontalAlignment(JLabel.CENTER);
-            recipeCell.add(labelHopsName);
+//            recipeCell.add(labelHopsName);
+            ingredientsPanel.add(labelHopsName);
 
             JLabel labelYeastName = new JLabel("Yeast: " + recipe.getYeast().getName() + recipe.getYeast().getQuantity() + " kg");
             labelYeastName.setFont(labelFont);
             labelYeastName.setForeground(Color.BLUE);
             labelYeastName.setHorizontalAlignment(JLabel.CENTER);
-            recipeCell.add(labelYeastName);
+//            recipeCell.add(labelYeastName);
+            ingredientsPanel.add(labelYeastName);
 
             JLabel labelWaterName = new JLabel("Water: " + recipe.getWater().getQuantity() + "L");
             labelWaterName.setFont(labelFont);
             labelWaterName.setForeground(Color.BLUE);
             labelWaterName.setHorizontalAlignment(JLabel.CENTER);
-            recipeCell.add(labelWaterName);
+//            recipeCell.add(labelWaterName);
+            ingredientsPanel.add(labelWaterName);
+
 
 
 
@@ -94,15 +104,18 @@ public class RecipeUi extends JFrame {
                 labelIngredientName.setFont(labelFont);
                 labelIngredientName.setForeground(Color.BLUE);
                 labelIngredientName.setHorizontalAlignment(JLabel.CENTER);
-                recipeCell.add(labelIngredientName);
+//                recipeCell.add(labelIngredientName);
+                ingredientsPanel.add(labelIngredientName);
             }
 
-
+            recipeCell.add(ingredientsPanel);
             contentList.add(recipeCell);
 //            contentList.add(upperPanel);
 //            contentList.add(lowerPanel);
         }
-
+        JScrollPane recipeListScroll = new JScrollPane(contentList);
+        recipeListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        recipeListScroll.setPreferredSize(new Dimension(600, 600));
         add(recipeListScroll, BorderLayout.CENTER);
         setVisible(true);
     }
