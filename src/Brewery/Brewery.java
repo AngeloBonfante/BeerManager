@@ -2,13 +2,19 @@ package Brewery;
 
 import Recipe.Recipe;
 import Stockpile.Beer;
+
+import javax.swing.*;
+import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Brewery {
+public class Brewery implements Serializable {
     /*Uma cervejaria tem Estoque e Receitas*/
     private ArrayList<Beer> Stockpile;
     private ArrayList<Recipe> Recipes;
+
+
 
     public Brewery() {
         this.Stockpile = new ArrayList<Beer>();
@@ -27,8 +33,10 @@ public class Brewery {
         for (int i = 0; i < Stockpile.size(); i++) {
             if(Stockpile.get(i).getStyleName().equalsIgnoreCase(beerName)){
                 Stockpile.remove(i);
+                return;
             }
         }
+        JOptionPane.showMessageDialog(null, "Beer Not Found!");
     }
 
     public ArrayList<Beer> getStockpile() {
@@ -36,5 +44,26 @@ public class Brewery {
     }
     public ArrayList<Recipe> getRecipes() {
         return Recipes;
+    }
+
+    public void save(String filename){
+        try(ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(filename))){
+            outputStream.writeObject(this);
+            System.out.println("Brewery saved successfully.");
+        }catch (IOException error){
+            System.out.println(error.getMessage());
+        }
+
+    }
+    public Brewery load(String filename){
+        try(ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(filename))){
+            Brewery brewery = (Brewery) inputStream.readObject();
+            System.out.println("Brewery loaded successfully.");
+            return brewery;
+        } catch (IOException | ClassNotFoundException error){
+            System.out.println(error.getMessage());
+            return null;
+        }
+
     }
 }

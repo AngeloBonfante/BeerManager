@@ -1,6 +1,6 @@
 package Recipe;
 
-public class Ingredient {
+public class Ingredient implements java.io.Serializable{
     private String name;
     private double quantity;
     private String unit;

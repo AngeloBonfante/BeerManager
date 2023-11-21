@@ -2,7 +2,7 @@ package Stockpile;
 
 import Recipe.Recipe;
 
-public class Beer {
+public class Beer implements java.io.Serializable{
     private String StyleName;
     private String type;
     private double abv;

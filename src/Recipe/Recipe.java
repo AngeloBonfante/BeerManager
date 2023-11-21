@@ -2,7 +2,7 @@ package Recipe;
 
 import java.util.ArrayList;
 
-public class Recipe {
+public class Recipe implements java.io.Serializable{
     private String recipeName;
     private String description;
     private Ingredient malt;

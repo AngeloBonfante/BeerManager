@@ -6,6 +6,8 @@ import GUI.addBeerUi;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -21,7 +23,9 @@ public class Gui extends JFrame implements MouseListener{
     JPanel mainContentPanel;
     JPanel sidePanelArea;
 
-    JPanel temp = new JPanel();
+
+
+    JMenuBar menuBar;
 
     boolean beersOnScreen = false;
     boolean recipesOnScreen = false;
@@ -35,6 +39,60 @@ public class Gui extends JFrame implements MouseListener{
 
         this.brewery = brewery;
 
+
+
+        menuBar = new JMenuBar();
+
+        JMenu fileMenu = new JMenu("File");
+        JMenu options = new JMenu("Options");
+
+        JMenuItem loadMenuItem = new JMenuItem("Load");
+        JMenuItem saveMenuItem = new JMenuItem("Save");
+        JMenuItem exitMenuItem = new JMenuItem("Exit");
+        JMenuItem New = new JMenuItem("New");
+
+        JMenuItem colorPickMenuItem = new JMenuItem("Color");
+
+        saveMenuItem.addActionListener(e -> {
+            brewery.save("Brewery.beer");
+        });
+
+        loadMenuItem.addActionListener(e -> {
+            this.brewery = brewery.load("Brewery.beer");
+            this.dispose();
+            new Gui(this.brewery);
+
+        });
+        exitMenuItem.addActionListener(e -> {
+            System.exit(0);
+        });
+        New.addActionListener(e -> {
+            this.dispose();
+            new Gui(new Brewery());
+        });
+
+        colorPickMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Color selectedColor = JColorChooser.showDialog(null, "Choose a Color", Color.WHITE);
+                if (selectedColor != null) {
+                    // Do something with the selected color, such as setting it to a component
+                    mainContentPanel.setBackground(selectedColor);
+                }
+            }
+        });
+
+
+        fileMenu.add(New);
+        fileMenu.add(loadMenuItem);
+        fileMenu.add(saveMenuItem);
+        fileMenu.add(exitMenuItem);
+
+        options.add(colorPickMenuItem);
+
+
+
+
         JPanel buttonMenu = new JPanel(new GridLayout(1,2,0,0));
         mainContentPanel= new JPanel(new GridLayout(0,4,0,0));
         sidePanelArea = new JPanel(new GridLayout(0,1,0,0));
@@ -43,7 +101,7 @@ public class Gui extends JFrame implements MouseListener{
         sidePanelArea.setBackground(Color.GREEN);
 
         buttonMenu.setPreferredSize(new Dimension(0, 100));
-        sidePanelArea.setPreferredSize(new Dimension(100, 0));
+        sidePanelArea.setPreferredSize(new Dimension(0, 0));
 
         buttonBeers = new JButton("Beers");
         buttonRecipes = new JButton("Recipes");
@@ -92,6 +150,9 @@ public class Gui extends JFrame implements MouseListener{
 //        sidePanelArea.add(addBeerButton);
 //        sidePanelArea.add(removeBeerButton);
 
+        menuBar.add(fileMenu);
+        menuBar.add(options);
+        this.setJMenuBar(menuBar);
 
 
 
@@ -99,6 +160,7 @@ public class Gui extends JFrame implements MouseListener{
         this.add(buttonMenu, BorderLayout.SOUTH);
         this.add(mainContentPanel, BorderLayout.CENTER);
         this.add(sidePanelArea, BorderLayout.WEST);
+        renderIngredients();
         setVisible(true);
     }
 
@@ -124,6 +186,55 @@ public class Gui extends JFrame implements MouseListener{
         sidePanelArea.removeAll();
         sidePanelArea.add(addBeerButton);
         sidePanelArea.add(removeBeerButton);
+        sidePanelArea.setPreferredSize(new Dimension(100, 0));
+        sidePanelArea.revalidate();
+        sidePanelArea.repaint();
+    }
+
+    public void renderRecipes(){
+        recipesOnScreen = true;
+        beersOnScreen = false;
+        System.out.println("Recipes");
+        // Remove all components from the mainContentPanel
+        mainContentPanel.removeAll();
+
+        // Add the new content (BeersDisplayPanel) to the mainContentPanel
+        RecipeUi recipePanel = new RecipeUi(brewery.getRecipes());
+        mainContentPanel.setLayout(new GridLayout(0, 1, 0, 0));
+        mainContentPanel.add(recipePanel.getRecipePane());
+        mainContentPanel.setPreferredSize(new Dimension(1000, 600));
+        recipePanel.dispose();
+
+        // Refresh the GUI to reflect the changes
+        mainContentPanel.revalidate();
+        mainContentPanel.repaint();
+
+        //add buttons to sidepanel
+        sidePanelArea.removeAll();
+        sidePanelArea.setPreferredSize(new Dimension(0, 0));
+        sidePanelArea.revalidate();
+        sidePanelArea.repaint();
+    }
+
+    public void renderIngredients(){
+        System.out.println("Ingredients");
+        // Remove all components from the mainContentPanel
+        mainContentPanel.removeAll();
+
+        // Add the new content (BeersDisplayPanel) to the mainContentPanel
+
+        JLabel label = new JLabel("Ingredients");
+        mainContentPanel.setLayout(new BorderLayout());
+        mainContentPanel.add(label, BorderLayout.NORTH);
+
+
+        // Refresh the GUI to reflect the changes
+        mainContentPanel.revalidate();
+        mainContentPanel.repaint();
+
+        //add buttons to sidepanel
+        sidePanelArea.removeAll();
+        sidePanelArea.setPreferredSize(new Dimension(0, 0));
         sidePanelArea.revalidate();
         sidePanelArea.repaint();
     }
@@ -138,6 +249,7 @@ public class Gui extends JFrame implements MouseListener{
                 mainContentPanel.repaint();
 
                 sidePanelArea.removeAll();
+                sidePanelArea.setPreferredSize(new Dimension(0, 0));
                 sidePanelArea.revalidate();
                 sidePanelArea.repaint();
 
@@ -162,31 +274,20 @@ public class Gui extends JFrame implements MouseListener{
                 beersOnScreen = false;
                 return;
             }
-            recipesOnScreen = true;
-            beersOnScreen = false;
-            System.out.println("Recipes");
-            // Remove all components from the mainContentPanel
-            mainContentPanel.removeAll();
-
-            // Add the new content (BeersDisplayPanel) to the mainContentPanel
-            RecipeUi recipePanel = new RecipeUi(brewery.getRecipes());
-            mainContentPanel.setLayout(new GridLayout(0, 1, 0, 0));
-            mainContentPanel.add(recipePanel.getRecipePane());
-            mainContentPanel.setPreferredSize(new Dimension(1000, 600));
-            recipePanel.dispose();
-
-            // Refresh the GUI to reflect the changes
-            mainContentPanel.revalidate();
-            mainContentPanel.repaint();
-
-            //add buttons to sidepanel
-            sidePanelArea.removeAll();
-            sidePanelArea.revalidate();
-            sidePanelArea.repaint();
+            renderRecipes();
         }
         if (e.getSource() == addBeerButton){
             System.out.println("Add Beer");
             new addBeerUi(brewery, mainContentPanel, this);
+        }
+        if (e.getSource() == removeBeerButton){
+            System.out.println("Remove Beer");
+            String beerName = JOptionPane.showInputDialog("Enter the name of the beer to remove:");
+            brewery.removeBeer(beerName);
+            mainContentPanel.removeAll();
+            mainContentPanel.revalidate();
+            mainContentPanel.repaint();
+            renderBeer();
         }
     }
 
