@@ -2,11 +2,11 @@ package NewGui;
 
 import Brewery.Brewery;
 import GUI.BeerRecipeUi;
-import GUI.addBeerUi;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class BeersDisplayPanel extends JFrame {
 
@@ -21,9 +21,6 @@ public class BeersDisplayPanel extends JFrame {
             setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
             setLayout(new BorderLayout());
 
-
-
-            //TODO: Create a list of beers
             contentList = new JPanel(new GridLayout(0,4,0,0));
             contentList.setPreferredSize(new Dimension(550, 500));
             JScrollPane beerListScroll = new JScrollPane(contentList);
@@ -101,7 +98,6 @@ public class BeersDisplayPanel extends JFrame {
             add(beerListScroll, BorderLayout.CENTER);
 
             returnedPanel = new JPanel(new BorderLayout());
-            //returnedPanel receives the entire screen as it is but without buttons
             returnedPanel.add(beerListScroll, BorderLayout.CENTER);
             setVisible(true);
         }

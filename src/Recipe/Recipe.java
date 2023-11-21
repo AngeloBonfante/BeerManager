@@ -9,15 +9,17 @@ public class Recipe implements java.io.Serializable{
     private Ingredient hops;
     private Ingredient yeast;
     private Ingredient water;
+    private Ingredient sugar;
     private ArrayList<Ingredient> ingredients;
 
-    public Recipe(String styleName, Ingredient malt, Ingredient hops, Ingredient yeast, Ingredient water) {
+    public Recipe(String styleName, Ingredient malt, Ingredient hops, Ingredient yeast, Ingredient water, Ingredient sugar) {
         this.recipeName = styleName;
         this.description = "Receita de " + styleName + ".";
         this.malt = malt;
         this.hops = hops;
         this.yeast = yeast;
         this.water = water;
+        this.sugar = sugar;
         this.ingredients = new ArrayList<Ingredient>();
     }
 

@@ -1,7 +1,7 @@
 package GUI;
 
-import Recipe.Recipe;
 import Recipe.Ingredient;
+import Recipe.Recipe;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,7 +1,7 @@
 package GUI;
 
-import Recipe.Recipe;
 import Recipe.Ingredient;
+import Recipe.Recipe;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,7 +30,6 @@ public class RecipeUi extends JFrame {
         addWindowListener(windowListener);
 
         JPanel contentList = new JPanel(new GridLayout(0,2,0,0));
-        //contentList.setPreferredSize(new Dimension(550, 600));
 
         returnedPanel = new JPanel(new GridLayout(0,1,0,0));
 
@@ -39,9 +38,6 @@ public class RecipeUi extends JFrame {
         Font labelFont = new Font("Arial", Font.BOLD, 14);
 
         for(Recipe recipe : recipes) {
-
-//            JPanel upperPanel = new JPanel(new GridLayout(0,1,0,0));
-//            JPanel lowerPanel = new JPanel(new GridLayout(0,1,0,0));
 
             JPanel recipeCell = new JPanel(new GridLayout(0,1,0,0));
             recipeCell.setPreferredSize(new Dimension(250, 300));
@@ -62,7 +58,6 @@ public class RecipeUi extends JFrame {
             textAreaDescription.setEditable(false);
             textAreaDescription.setOpaque(false);
             textAreaDescription.setBorder(null);
-//            recipeCell.add(textAreaDescription);
 
             JScrollPane descPane = new JScrollPane(textAreaDescription);
             descPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -75,28 +70,24 @@ public class RecipeUi extends JFrame {
             labelMaltName.setFont(labelFont);
             labelMaltName.setForeground(Color.BLUE);
             labelMaltName.setHorizontalAlignment(JLabel.CENTER);
-//            recipeCell.add(labelMaltName);
             ingredientsPanel.add(labelMaltName);
 
             JLabel labelHopsName = new JLabel("Hops: " + recipe.getHops().getName() + recipe.getHops().getQuantity() + " kg");
             labelHopsName.setFont(labelFont);
             labelHopsName.setForeground(Color.BLUE);
             labelHopsName.setHorizontalAlignment(JLabel.CENTER);
-//            recipeCell.add(labelHopsName);
             ingredientsPanel.add(labelHopsName);
 
             JLabel labelYeastName = new JLabel("Yeast: " + recipe.getYeast().getName() + recipe.getYeast().getQuantity() + " kg");
             labelYeastName.setFont(labelFont);
             labelYeastName.setForeground(Color.BLUE);
             labelYeastName.setHorizontalAlignment(JLabel.CENTER);
-//            recipeCell.add(labelYeastName);
             ingredientsPanel.add(labelYeastName);
 
             JLabel labelWaterName = new JLabel("Water: " + recipe.getWater().getQuantity() + "L");
             labelWaterName.setFont(labelFont);
             labelWaterName.setForeground(Color.BLUE);
             labelWaterName.setHorizontalAlignment(JLabel.CENTER);
-//            recipeCell.add(labelWaterName);
             ingredientsPanel.add(labelWaterName);
 
 
@@ -109,14 +100,11 @@ public class RecipeUi extends JFrame {
                 labelIngredientName.setFont(labelFont);
                 labelIngredientName.setForeground(Color.BLUE);
                 labelIngredientName.setHorizontalAlignment(JLabel.CENTER);
-//                recipeCell.add(labelIngredientName);
                 ingredientsPanel.add(labelIngredientName);
             }
 
             recipeCell.add(ingredientsPanel);
             contentList.add(recipeCell);
-//            contentList.add(upperPanel);
-//            contentList.add(lowerPanel);
         }
         JScrollPane recipeListScroll = new JScrollPane(contentList);
         recipeListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

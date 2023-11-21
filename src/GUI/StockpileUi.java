@@ -2,8 +2,6 @@ package GUI;
 
 import Brewery.Brewery;
 import NewGui.Gui;
-import Recipe.Recipe;
-import Stockpile.Beer;
 
 import javax.swing.*;
 import java.awt.*;

@@ -4,10 +4,8 @@ import Recipe.Recipe;
 import Stockpile.Beer;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Brewery implements Serializable {
     /*Uma cervejaria tem Estoque e Receitas*/

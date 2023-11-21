@@ -2,8 +2,8 @@ package GUI;
 
 import Brewery.Brewery;
 import NewGui.Gui;
-import Recipe.Recipe;
 import Recipe.Ingredient;
+import Recipe.Recipe;
 import Stockpile.Beer;
 
 import javax.swing.*;
@@ -37,7 +37,6 @@ public class addBeerUi extends JFrame implements ActionListener {
     JTextField recipeHopsField;
     JTextField recipeYeastField;
     JTextField recipeWaterField;
-//    JTextField recipeSugarField;
     JTextField recipeExtraField;
 
     JTextField recipeMaltAmountField;
@@ -130,8 +129,6 @@ public class addBeerUi extends JFrame implements ActionListener {
         JLabel recipeMaltLabel = new JLabel("Malt");
         JLabel recipeHopsLabel = new JLabel("Hops");
         JLabel recipeYeastLabel = new JLabel("Yeast");
-//        JLabel recipeWaterLabel = new JLabel("Water");
-//        JLabel recipeSugarLabel = new JLabel("Sugar");
         JLabel recipeExtraLabel = new JLabel("Extra");
 
         JLabel recipeMaltAmountLabel = new JLabel("Amount (Kg)");
@@ -156,8 +153,6 @@ public class addBeerUi extends JFrame implements ActionListener {
         recipeYeastField.setPreferredSize(new Dimension(140, 15));
         recipeWaterField = new JTextField();
         recipeWaterField.setPreferredSize(new Dimension(140, 15));
-//        recipeSugarField = new JTextField();
-//        recipeSugarField.setPreferredSize(new Dimension(140, 15));
         recipeExtraField = new JTextField();
         recipeExtraField.setPreferredSize(new Dimension(140, 15));
 
@@ -214,21 +209,11 @@ public class addBeerUi extends JFrame implements ActionListener {
         recipeYeastAmountPanel.add(recipeYeastAmountField);
         recipeYeastAmountPanel.setBackground(Color.GREEN);
         recipeYeastAmountPanel.setPreferredSize(new Dimension(230, 20));
-//        JPanel recipeWaterPanel = new JPanel(new GridLayout());
-//        recipeWaterPanel.add(recipeWaterLabel);
-//        recipeWaterPanel.add(recipeWaterField);
-//        recipeWaterPanel.setBackground(Color.GREEN);
-//        recipeWaterPanel.setPreferredSize(new Dimension(230, 20));
         JPanel recipeWaterAmountPanel = new JPanel(new GridLayout());
         recipeWaterAmountPanel.add(recipeWaterAmountLabel);
         recipeWaterAmountPanel.add(recipeWaterAmountField);
         recipeWaterAmountPanel.setBackground(Color.GREEN);
         recipeWaterAmountPanel.setPreferredSize(new Dimension(230, 20));
-//        JPanel recipeSugarPanel = new JPanel(new GridLayout());
-//        recipeSugarPanel.add(recipeSugarLabel);
-//        recipeSugarPanel.add(recipeSugarField);
-//        recipeSugarPanel.setBackground(Color.GREEN);
-//        recipeSugarPanel.setPreferredSize(new Dimension(230, 20));
         JPanel recipeSugarAmountPanel = new JPanel(new GridLayout());
         recipeSugarAmountPanel.add(recipeSugarAmountLabel);
         recipeSugarAmountPanel.add(recipeSugarAmountField);
@@ -294,9 +279,7 @@ public class addBeerUi extends JFrame implements ActionListener {
         recipePanel.add(recipeHopsAmountPanel);
         recipePanel.add(recipeYeastPanel);
         recipePanel.add(recipeYeastAmountPanel);
-//        recipePanel.add(recipeWaterPanel);
         recipePanel.add(recipeWaterAmountPanel);
-//        recipePanel.add(recipeSugarPanel);
         recipePanel.add(recipeSugarAmountPanel);
         recipePanel.add(recipeExtraPanel);
         recipePanel.add(recipeExtraAmountPanel);
@@ -333,23 +316,22 @@ public class addBeerUi extends JFrame implements ActionListener {
                 String maltString = recipeMaltField.getText();
                 String hopsString = recipeHopsField.getText();
                 String yeastString = recipeYeastField.getText();
-//                String waterString = recipeWaterField.getText();
-//                String extraString = recipeExtraField.getText();
 
                 double maltAmount = Double.parseDouble(recipeMaltAmountField.getText());
                 double hopsAmount = Double.parseDouble(recipeHopsAmountField.getText());
                 double yeastAmount = Double.parseDouble(recipeYeastAmountField.getText());
                 double waterAmount = Double.parseDouble(recipeWaterAmountField.getText());
                 double sugarAmount = Double.parseDouble(recipeSugarAmountField.getText());
-//                double extraAmount = Double.parseDouble(recipeExtraAmountField.getText());
 
                 Ingredient malt = new Ingredient(maltString, maltAmount, "KG/L");
                 Ingredient hops = new Ingredient(hopsString, hopsAmount, "KG/L");
                 Ingredient yeast = new Ingredient(yeastString, yeastAmount, "KG/L");
                 Ingredient water = new Ingredient("Water", waterAmount, "KG/L");
+                Ingredient sugar = new Ingredient("Sugar", sugarAmount, "g");
 
 
-                newRecipe = new Recipe(name, malt, hops, yeast, water);
+                newRecipe = new Recipe(name, malt, hops, yeast, water, sugar);
+                newRecipe.setDescription(description);
 
                 if(!extraIngredients.isEmpty()){
                     for (Ingredient ingredient : extraIngredients) {
@@ -363,7 +345,6 @@ public class addBeerUi extends JFrame implements ActionListener {
                 recipeHopsField.setText("");
                 recipeYeastField.setText("");
                 recipeWaterField.setText("");
-//                recipeSugarField.setText("");
                 recipeExtraField.setText("");
 
                 recipeMaltAmountField.setText("");

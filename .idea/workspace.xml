@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Unified UI.">
-      <change afterPath="$PROJECT_DIR$/src/beergif.gif" afterDir="false" />
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Color picker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Brewery/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Brewery/Brewery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/RecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RecipeUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/StockpileUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/StockpileUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Ui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/addBeerUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/addBeerUi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewGui/BeersDisplayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/BeersDisplayPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NewGui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipe/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipe/Ingredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Recipe/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipe/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stockpile/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stockpile/Beer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +86,8 @@
       <workItem from="1700032553555" duration="5161000" />
       <workItem from="1700109032280" duration="13491000" />
       <workItem from="1700297188366" duration="6068000" />
-      <workItem from="1700450535373" duration="16907000" />
+      <workItem from="1700450535373" duration="17515000" />
+      <workItem from="1700583787166" duration="1416000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -164,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700560700547</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Color picker">
+      <option name="closed" value="true" />
+      <created>1700581903189</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700581903189</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,17 +204,7 @@
     <MESSAGE value="&#10;Recipe List" />
     <MESSAGE value="&#10;Recipe List fixed" />
     <MESSAGE value="Unified UI." />
-    <option name="LAST_COMMIT_MESSAGE" value="Unified UI." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/NewGui/Gui.java</url>
-          <line>243</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Color picker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Color picker" />
   </component>
 </project>

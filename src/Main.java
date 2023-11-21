@@ -1,35 +1,38 @@
 import Brewery.Brewery;
-import GUI.StockpileUi;
-import GUI.Ui;
 import NewGui.Gui;
 import Recipe.Ingredient;
-import GUI.addBeerUi;
 import Recipe.Recipe;
 import Stockpile.Beer;
 
 public class Main {
     public static void main(String[] args) {
         Brewery brewery = new Brewery();
+        createDummyFile(brewery);
+        Gui gui = new Gui(brewery);
+    }
 
+    private static void createDummyFile(Brewery brewery){
         //create malt, hops,yeast and water ingredient
         Ingredient malt = new Ingredient("malt", 1, "1");
         Ingredient hops = new Ingredient("hops", 1, "1");
         Ingredient yeast = new Ingredient("yeast", 1, "1");
         Ingredient water = new Ingredient("water", 1, "1");
+        Ingredient sugar = new Ingredient("sugar", 2, "1");
 
         //create recipe
-        Recipe temprecipe1 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe2 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe3 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe4 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe5 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe6 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe7 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
-        Recipe temprecipe8 = new Recipe("IPA Special Recipe", malt, hops, yeast, water);
+        Recipe temprecipe1 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe2 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe3 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe4 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe5 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe6 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe7 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
+        Recipe temprecipe8 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
 
         temprecipe1.setDescription("Bro add it to the pan, heat it up or smth, idk lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         temprecipe2.setDescription("Bro add it to the pan, heat it up or smth, idk lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
         temprecipe3.setDescription("Bro add it to the pan, heat it up or smth, idk lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+
         Beer temp1 = new Beer("test1", "IPA", 1,1,1,1,temprecipe1);
         Beer temp2 = new Beer("test2", "IPA", 1,1,1,1,temprecipe1);
         Beer temp3 = new Beer("test3", "IPA", 1,1,1,1,temprecipe1);
@@ -53,9 +56,7 @@ public class Main {
         brewery.addBeer(temp4);
         brewery.addBeer(temp5);
         brewery.addBeer(temp6);
-        //Ui ui = new Ui(brewery);
-        Gui gui = new Gui(brewery);
-        //new StockpileUi(brewery);
-
     }
+
+
 }
