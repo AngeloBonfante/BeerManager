@@ -8,18 +8,17 @@ public class Main {
     public static void main(String[] args) {
         Brewery brewery = new Brewery();
         createDummyFile(brewery);
-        Gui gui = new Gui(brewery);
+        new Gui(brewery);
     }
 
     private static void createDummyFile(Brewery brewery){
-        //create malt, hops,yeast and water ingredient
+
         Ingredient malt = new Ingredient("malt", 1, "1");
         Ingredient hops = new Ingredient("hops", 1, "1");
         Ingredient yeast = new Ingredient("yeast", 1, "1");
         Ingredient water = new Ingredient("water", 1, "1");
         Ingredient sugar = new Ingredient("sugar", 2, "1");
 
-        //create recipe
         Recipe temprecipe1 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
         Recipe temprecipe2 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
         Recipe temprecipe3 = new Recipe("IPA Special Recipe", malt, hops, yeast, water, sugar);
@@ -48,7 +47,6 @@ public class Main {
         brewery.addRecipe(temprecipe6);
         brewery.addRecipe(temprecipe7);
         brewery.addRecipe(temprecipe8);
-
 
         brewery.addBeer(temp1);
         brewery.addBeer(temp2);
