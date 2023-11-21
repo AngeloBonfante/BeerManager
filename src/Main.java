@@ -1,6 +1,7 @@
 import Brewery.Brewery;
 import GUI.StockpileUi;
 import GUI.Ui;
+import NewGui.Gui;
 import Recipe.Ingredient;
 import GUI.addBeerUi;
 import Recipe.Recipe;
@@ -52,7 +53,8 @@ public class Main {
         brewery.addBeer(temp4);
         brewery.addBeer(temp5);
         brewery.addBeer(temp6);
-        Ui ui = new Ui(brewery);
+        //Ui ui = new Ui(brewery);
+        Gui gui = new Gui(brewery);
         //new StockpileUi(brewery);
 
     }

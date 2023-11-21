@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeUi extends JFrame {
+
+
+    JPanel returnedPanel;
+
     public RecipeUi(List<Recipe> recipes) {
         super("Recipes");
         setSize(700, 700);
@@ -28,6 +32,7 @@ public class RecipeUi extends JFrame {
         JPanel contentList = new JPanel(new GridLayout(0,2,0,0));
         //contentList.setPreferredSize(new Dimension(550, 600));
 
+        returnedPanel = new JPanel(new GridLayout(0,1,0,0));
 
         contentList.setBackground(Color.BLUE);
 
@@ -117,6 +122,11 @@ public class RecipeUi extends JFrame {
         recipeListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         recipeListScroll.setPreferredSize(new Dimension(600, 600));
         add(recipeListScroll, BorderLayout.CENTER);
+        returnedPanel.add(recipeListScroll);
         setVisible(true);
+    }
+
+    public JPanel getRecipePane(){
+        return returnedPanel;
     }
 }

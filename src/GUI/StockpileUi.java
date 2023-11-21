@@ -1,6 +1,7 @@
 package GUI;
 
 import Brewery.Brewery;
+import NewGui.Gui;
 import Recipe.Recipe;
 import Stockpile.Beer;
 
@@ -15,6 +16,7 @@ public class StockpileUi extends JFrame implements MouseListener {
 
     Brewery brewery;
 
+    JPanel contentList;
 
     public StockpileUi(Brewery brewery) {
         super("Beer");
@@ -55,7 +57,7 @@ public class StockpileUi extends JFrame implements MouseListener {
 
 
         //TODO: Create a list of beers
-        JPanel contentList = new JPanel(new GridLayout(0,4,0,0));
+        contentList = new JPanel(new GridLayout(0,4,0,0));
         contentList.setPreferredSize(new Dimension(550, 500));
         JScrollPane beerListScroll = new JScrollPane(contentList);
         beerListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
@@ -141,7 +143,7 @@ public class StockpileUi extends JFrame implements MouseListener {
         if (e.getSource() == buttonAddBeer){
             System.out.println("Add Beer");
             this.dispose();
-            new addBeerUi(brewery);
+            new addBeerUi(brewery, contentList, new Gui(brewery));
 
         }if (e.getSource() == buttonRemoveBeer){
             System.out.println("Remove Beer");
@@ -180,4 +182,6 @@ public class StockpileUi extends JFrame implements MouseListener {
         }
 
     }
+
+
 }

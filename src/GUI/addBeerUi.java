@@ -1,6 +1,7 @@
 package GUI;
 
 import Brewery.Brewery;
+import NewGui.Gui;
 import Recipe.Recipe;
 import Recipe.Ingredient;
 import Stockpile.Beer;
@@ -52,10 +53,14 @@ public class addBeerUi extends JFrame implements ActionListener {
     JButton submitRecipe;
     JButton submitBeer;
 
+    JPanel mainCont;
+    Gui guiInst;
 
-    public addBeerUi(Brewery brewery) {
+    public addBeerUi(Brewery brewery, JPanel mainCont, Gui guiInst) {
         super("Add Beer");
         this.brewery = brewery;
+        this.mainCont = mainCont;
+        this.guiInst = guiInst;
         setSize(600, 600);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -396,8 +401,11 @@ public class addBeerUi extends JFrame implements ActionListener {
                 this.brewery.addRecipe(newRecipe);
                 System.out.println("Beer Added");
                 System.out.println(this.brewery.getStockpile().get(0).getStyleName());
+                mainCont.removeAll();
+                mainCont.revalidate();
+                mainCont.repaint();
+                guiInst.renderBeer();
                 this.dispose();
-                new StockpileUi(brewery);
             }
         }catch (NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Please fill all the fields with valid values!");
