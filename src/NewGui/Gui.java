@@ -41,6 +41,9 @@ public class Gui extends JFrame implements MouseListener{
         JMenuItem exitMenuItem = new JMenuItem("Exit");
         JMenuItem New = new JMenuItem("New");
         JMenuItem colorPickMenuItem = new JMenuItem("Color");
+        JMenuItem fontColor = new JMenuItem("Button Text Color");
+        JMenuItem buttonColor = new JMenuItem("Button Color");
+        JMenuItem addDummyBeer = new JMenuItem("Add Dummy Beers");
 
         saveMenuItem.addActionListener(e -> brewery.save("Brewery.beer"));
 
@@ -61,21 +64,53 @@ public class Gui extends JFrame implements MouseListener{
         colorPickMenuItem.addActionListener(e -> {
             Color selectedColor = JColorChooser.showDialog(null, "Choose a Color", Color.WHITE);
             if (selectedColor != null) {
+                brewery.setColor(selectedColor);
                 mainContentPanel.setBackground(selectedColor);
             }
         });
+
+        fontColor.addActionListener(e -> {
+            Color selectedColor = JColorChooser.showDialog(null, "Choose a Color", Color.WHITE);
+            if (selectedColor != null) {
+                brewery.setFontColor(selectedColor);
+                buttonBeers.setForeground(selectedColor);
+                buttonRecipes.setForeground(selectedColor);
+                addBeerButton.setForeground(selectedColor);
+                removeBeerButton.setForeground(selectedColor);
+            }
+        });
+
+        buttonColor.addActionListener(e -> {
+            Color selectedColor = JColorChooser.showDialog(null, "Choose a Color", Color.WHITE);
+            if (selectedColor != null) {
+                brewery.setButtonColor(selectedColor);
+                buttonBeers.setBackground(selectedColor);
+                buttonRecipes.setBackground(selectedColor);
+                addBeerButton.setBackground(selectedColor);
+                removeBeerButton.setBackground(selectedColor);
+            }
+        });
+
+        addDummyBeer.addActionListener(
+                e->{
+                    brewery.createDummyFile();
+                }
+        );
 
         fileMenu.add(New);
         fileMenu.add(loadMenuItem);
         fileMenu.add(saveMenuItem);
         fileMenu.add(exitMenuItem);
         options.add(colorPickMenuItem);
+        options.add(fontColor);
+        options.add(buttonColor);
+        options.add(addDummyBeer);
 
         JPanel buttonMenu = new JPanel(new GridLayout(1,2,0,0));
         mainContentPanel= new JPanel(new GridLayout(0,4,0,0));
         sidePanelArea = new JPanel(new GridLayout(0,1,0,0));
 
-        mainContentPanel.setBackground(Color.BLUE);
+        mainContentPanel.setBackground(brewery.getColor());
 
         buttonMenu.setPreferredSize(new Dimension(0, 100));
         sidePanelArea.setPreferredSize(new Dimension(0, 0));
@@ -94,8 +129,13 @@ public class Gui extends JFrame implements MouseListener{
 
         buttonBeers.setBorderPainted(false);
         buttonRecipes.setBorderPainted(false);
-        buttonBeers.setBackground(Color.YELLOW);
-        buttonRecipes.setBackground(Color.YELLOW);
+        buttonBeers.setBackground(brewery.getButtonColor());
+        buttonRecipes.setBackground(brewery.getButtonColor());
+        buttonBeers.setForeground(brewery.getFontColor());
+        buttonRecipes.setForeground(brewery.getFontColor());
+
+        buttonBeers.setFont(new Font("Arial", Font.BOLD, 22));
+        buttonRecipes.setFont(new Font("Arial", Font.BOLD, 22));
 
         buttonMenu.add(buttonBeers);
         buttonMenu.add(buttonRecipes);
@@ -114,8 +154,8 @@ public class Gui extends JFrame implements MouseListener{
 
         addBeerButton.setBorderPainted(false);
         removeBeerButton.setBorderPainted(false);
-        addBeerButton.setBackground(Color.YELLOW);
-        removeBeerButton.setBackground(Color.YELLOW);
+        addBeerButton.setBackground(brewery.getButtonColor());
+        removeBeerButton.setBackground(brewery.getButtonColor());
 
         sidePanelArea.setLayout(new GridLayout(0,1,0,0));
 
@@ -138,15 +178,19 @@ public class Gui extends JFrame implements MouseListener{
         System.out.println("Beers");
         mainContentPanel.removeAll();
         BeersDisplayPanel beersDisplayPanel = new BeersDisplayPanel(brewery);
+        mainContentPanel.setLayout(new BorderLayout());
+        mainContentPanel.add(beersDisplayPanel.getReturnedPanel(), BorderLayout.CENTER);
         beersDisplayPanel.dispose();
-        mainContentPanel.setLayout(new GridLayout(0, 1, 0, 0));
-        mainContentPanel.add(beersDisplayPanel.getReturnedPanel());
         mainContentPanel.setPreferredSize(new Dimension(1000, 600));
         mainContentPanel.revalidate();
         mainContentPanel.repaint();
         sidePanelArea.removeAll();
         sidePanelArea.add(addBeerButton);
         sidePanelArea.add(removeBeerButton);
+        addBeerButton.setForeground(brewery.getFontColor());
+        removeBeerButton.setForeground(brewery.getFontColor());
+        addBeerButton.setBackground(brewery.getButtonColor());
+        removeBeerButton.setBackground(brewery.getButtonColor());
         sidePanelArea.setPreferredSize(new Dimension(100, 0));
         sidePanelArea.revalidate();
         sidePanelArea.repaint();
@@ -182,6 +226,19 @@ public class Gui extends JFrame implements MouseListener{
         sidePanelArea.setPreferredSize(new Dimension(0, 0));
         sidePanelArea.revalidate();
         sidePanelArea.repaint();
+    }
+
+    public Color darken(Color color){
+        int r = color.getRed();
+        int g = color.getGreen();
+        int b = color.getBlue();
+        int a = color.getAlpha();
+
+        r = (int) (r * 0.8);
+        g = (int) (g * 0.8);
+        b = (int) (b * 0.8);
+
+        return new Color(r, g, b, a);
     }
 
     @Override
@@ -249,11 +306,19 @@ public class Gui extends JFrame implements MouseListener{
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        if(e.getSource() == buttonBeers)
+            buttonBeers.setBackground(darken(brewery.getButtonColor()));
+        if(e.getSource() == buttonRecipes){
+            buttonRecipes.setBackground(darken(brewery.getButtonColor()));
+        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        if(e.getSource() == buttonBeers)
+            buttonBeers.setBackground(brewery.getButtonColor());
+        if(e.getSource() == buttonRecipes){
+            buttonRecipes.setBackground(brewery.getButtonColor());
+        }
     }
 }

@@ -30,7 +30,6 @@ public class RecipeUi extends JFrame {
         addWindowListener(windowListener);
 
         JPanel contentList = new JPanel(new GridLayout(0,2,0,0));
-
         returnedPanel = new JPanel(new GridLayout(0,1,0,0));
 
         contentList.setBackground(Color.BLUE);
@@ -40,12 +39,12 @@ public class RecipeUi extends JFrame {
         for(Recipe recipe : recipes) {
 
             JPanel recipeCell = new JPanel(new GridLayout(0,1,0,0));
-            recipeCell.setPreferredSize(new Dimension(250, 300));
+            recipeCell.setPreferredSize(new Dimension(250, 450));
             recipeCell.setBackground(Color.WHITE);
             recipeCell.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
             JLabel labelStyleName = new JLabel("Style Name: " + recipe.getStyleName());
-            labelStyleName.setFont(labelFont);
+            labelStyleName.setFont(new Font("Arial", Font.BOLD, 20));
             labelStyleName.setForeground(Color.BLUE);
             labelStyleName.setHorizontalAlignment(JLabel.CENTER);
             recipeCell.add(labelStyleName);
@@ -58,6 +57,7 @@ public class RecipeUi extends JFrame {
             textAreaDescription.setEditable(false);
             textAreaDescription.setOpaque(false);
             textAreaDescription.setBorder(null);
+            textAreaDescription.setFont(new Font("Arial", Font.PLAIN, 20));
 
             JScrollPane descPane = new JScrollPane(textAreaDescription);
             descPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -90,10 +90,25 @@ public class RecipeUi extends JFrame {
             labelWaterName.setHorizontalAlignment(JLabel.CENTER);
             ingredientsPanel.add(labelWaterName);
 
+            JLabel labelSugarName = new JLabel("Sugar: " + recipe.getSugar().getQuantity() + "kg");
+            labelSugarName.setFont(labelFont);
+            labelSugarName.setForeground(Color.BLUE);
+            labelSugarName.setHorizontalAlignment(JLabel.CENTER);
+            ingredientsPanel.add(labelSugarName);
+
+
 
 
 
             ArrayList<Ingredient> ingredients = recipe.getIngredients();
+
+            if(ingredients.isEmpty()){
+                JLabel labelIngredientName = new JLabel("No extra Ingredient");
+                labelIngredientName.setFont(labelFont);
+                labelIngredientName.setForeground(Color.BLUE);
+                labelIngredientName.setHorizontalAlignment(JLabel.CENTER);
+                ingredientsPanel.add(labelIngredientName);
+            }
 
             for(Ingredient ingredient : ingredients) {
                 JLabel labelIngredientName = new JLabel(ingredient.getName() + ": " + ingredient.getQuantity() + " kg");

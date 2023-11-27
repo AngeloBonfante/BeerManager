@@ -41,6 +41,9 @@ public class Recipe implements java.io.Serializable{
     public Ingredient getWater() {
         return water;
     }
+    public Ingredient getSugar() {
+        return sugar;
+    }
     public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }

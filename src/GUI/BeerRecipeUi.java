@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class BeerRecipeUi extends JFrame {
     public BeerRecipeUi(Recipe recipe) {
         super(recipe.getStyleName());
-        setSize(600, 500);
+        setSize(400, 700);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         WindowListener windowListener = new WindowAdapter() {
@@ -25,7 +25,7 @@ public class BeerRecipeUi extends JFrame {
         addWindowListener(windowListener);
         setLayout(new GridLayout(0,1,0,0));
 
-        Font uniformFont = new Font("Arial", Font.PLAIN, 14);
+        Font uniformFont = new Font("Arial", Font.PLAIN, 18);
 
         JLabel labelStyleName = new JLabel("Style Name: " + recipe.getStyleName());
         labelStyleName.setFont(uniformFont);
@@ -36,6 +36,18 @@ public class BeerRecipeUi extends JFrame {
         textAreaDescription.setEditable(false);
         textAreaDescription.setOpaque(false);
         textAreaDescription.setBorder(null);
+
+        // Create a JScrollPane for the description
+        JScrollPane descriptionScrollPane = new JScrollPane(textAreaDescription);
+        descriptionScrollPane.setPreferredSize(new Dimension(380, 270));
+
+        JPanel MainIngredientsPanel = new JPanel(new GridLayout(0,2,0,0));
+//        JPanel TopPanel = new JPanel(new GridLayout(0,1,0,0));
+        JPanel TopPanel = new JPanel(new FlowLayout());
+        TopPanel.setPreferredSize(new Dimension(380, 100));
+
+
+
         JLabel labelMaltName = new JLabel("Malt: " + recipe.getMalt().getName() + " | " + recipe.getMalt().getQuantity() + " kg");
         labelMaltName.setFont(uniformFont);
         labelMaltName.setPreferredSize(new Dimension(100, 100));
@@ -47,22 +59,42 @@ public class BeerRecipeUi extends JFrame {
         labelYeastName.setFont(uniformFont);
         JLabel labelWaterName = new JLabel("Water: " + recipe.getWater().getQuantity() + " L");
         labelWaterName.setFont(uniformFont);
+        JLabel labelSugarName = new JLabel("Sugar: " + recipe.getSugar().getQuantity() + " kg");
+        labelSugarName.setFont(uniformFont);
 
         ArrayList<Ingredient> ingredients = recipe.getIngredients();
 
-        add(labelStyleName);
-        add(textAreaDescription);
-        add(labelMaltName);
-        add(labelHopsName);
-        add(labelYeastName);
-        add(labelWaterName);
+        // Create a JPanel to hold the ingredient labels
+        JPanel ingredientPanel = new JPanel(new GridLayout(0,1,0,0));
+
+
+
+        MainIngredientsPanel.add(labelMaltName);
+        MainIngredientsPanel.add(labelHopsName);
+        MainIngredientsPanel.add(labelYeastName);
+        MainIngredientsPanel.add(labelWaterName);
+        MainIngredientsPanel.add(labelSugarName);
 
         for(Ingredient ingredient : ingredients) {
             JLabel labelIngredientName = new JLabel(ingredient.getName() + ": " + ingredient.getQuantity() + " kg");
             labelIngredientName.setFont(uniformFont);
-            add(labelIngredientName);
+            ingredientPanel.add(labelIngredientName);
+            MainIngredientsPanel.add(labelIngredientName);
         }
 
+        JScrollPane MainIngredientsScrollPane = new JScrollPane(MainIngredientsPanel);
+
+        // Create a JScrollPane for the ingredients
+        JScrollPane ingredientScrollPane = new JScrollPane(ingredientPanel);
+        ingredientScrollPane.setPreferredSize(new Dimension(550, 350));
+
+
+        TopPanel.add(labelStyleName);
+        TopPanel.add(descriptionScrollPane);
+
+        add(TopPanel);
+        add(MainIngredientsScrollPane);
+//        add(ingredientScrollPane);
 
         setVisible(true);
     }
