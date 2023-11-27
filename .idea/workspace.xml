@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="final">
-      <change afterPath="$PROJECT_DIR$/compile.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Scripts + final fixes">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Brewery/Brewery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Brewery/Brewery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RecipeUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/addBeerUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/addBeerUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui/BeersDisplayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/BeersDisplayPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recipe/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Recipe/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stockpile/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stockpile/Beer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +88,7 @@
       <workItem from="1700588850304" duration="18579000" />
       <workItem from="1700819907531" duration="14000" />
       <workItem from="1701039643408" duration="728000" />
-      <workItem from="1701066134095" duration="3533000" />
+      <workItem from="1701066134095" duration="3899000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -212,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701068342199</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Scripts + final fixes">
+      <option name="closed" value="true" />
+      <created>1701071256327</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701071256327</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +244,7 @@
     <MESSAGE value="&#10;fixed description" />
     <MESSAGE value="Cleaned the code" />
     <MESSAGE value="final" />
-    <option name="LAST_COMMIT_MESSAGE" value="final" />
+    <MESSAGE value="Scripts + final fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scripts + final fixes" />
   </component>
 </project>
