@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="gitignore">
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="Scripts + final fixes">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/beergif.gif" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +28,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -67,7 +62,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\angel\IdeaProjects\BeerManager" />
       <recent name="C:\Users\angel\IdeaProjects\BeerManager\src" />
     </key>
   </component>
@@ -94,7 +88,7 @@
       <workItem from="1700588850304" duration="18579000" />
       <workItem from="1700819907531" duration="14000" />
       <workItem from="1701039643408" duration="728000" />
-      <workItem from="1701066134095" duration="4284000" />
+      <workItem from="1701066134095" duration="3899000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -216,15 +210,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701071256327</updated>
     </task>
-    <task id="LOCAL-00016" summary="gitignore">
-      <option name="closed" value="true" />
-      <created>1701071568976</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1701071568976</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +245,6 @@
     <MESSAGE value="Cleaned the code" />
     <MESSAGE value="final" />
     <MESSAGE value="Scripts + final fixes" />
-    <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scripts + final fixes" />
   </component>
 </project>
