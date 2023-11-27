@@ -1,7 +1,9 @@
 package NewGui;
+
 import Brewery.Brewery;
 import GUI.RecipeUi;
 import GUI.addBeerUi;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;

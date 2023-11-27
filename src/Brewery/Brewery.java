@@ -1,19 +1,18 @@
 package Brewery;
 
+import Recipe.Ingredient;
 import Recipe.Recipe;
 import Stockpile.Beer;
-import Recipe.Ingredient;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Brewery implements Serializable {
     /*Uma cervejaria tem Estoque e Receitas*/
-    private ArrayList<Beer> Stockpile;
-    private ArrayList<Recipe> Recipes;
+    private final ArrayList<Beer> Stockpile;
+    private final ArrayList<Recipe> Recipes;
 
     private Color color;
     private Color fontColor;
@@ -21,8 +20,8 @@ public class Brewery implements Serializable {
 
 
     public Brewery() {
-        this.Stockpile = new ArrayList<Beer>();
-        this.Recipes = new ArrayList<Recipe>();
+        this.Stockpile = new ArrayList<>();
+        this.Recipes = new ArrayList<>();
         this.color = Color.BLUE;
         this.fontColor = Color.BLACK;
         this.buttonColor = Color.YELLOW;

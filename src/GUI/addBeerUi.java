@@ -95,7 +95,6 @@ public class addBeerUi extends JFrame implements ActionListener {
         JPanel styleNamePanel = new JPanel(new GridLayout());
         styleNamePanel.add(styleNameLabel);
         styleNamePanel.add(styleNameField);
-//        styleNamePanel.setBackground(brewery.getColor());
         styleNamePanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
         styleNamePanel.setForeground(Color.WHITE);
         styleNamePanel.setPreferredSize(new Dimension(230, 20));
@@ -103,7 +102,6 @@ public class addBeerUi extends JFrame implements ActionListener {
         JPanel typePanel = new JPanel(new GridLayout());
         typePanel.add(typeLabel);
         typePanel.add(typeField);
-//        typePanel.setBackground(brewery.getColor());
         typePanel.setPreferredSize(new Dimension(230, 20));
         typePanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 
@@ -111,28 +109,24 @@ public class addBeerUi extends JFrame implements ActionListener {
         JPanel abvPanel = new JPanel(new GridLayout());
         abvPanel.add(abvLabel);
         abvPanel.add(abvField);
-//        abvPanel.setBackground(brewery.getColor());
         abvPanel.setPreferredSize(new Dimension(230, 20));
         abvPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 
         JPanel ibuPanel = new JPanel(new GridLayout());
         ibuPanel.add(ibuLabel);
         ibuPanel.add(ibuField);
-//        ibuPanel.setBackground(brewery.getColor());
         ibuPanel.setPreferredSize(new Dimension(230, 20));
         ibuPanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 
         JPanel volumePanel = new JPanel(new GridLayout());
         volumePanel.add(volumeLabel);
         volumePanel.add(volumeField);
-//        volumePanel.setBackground(brewery.getColor());
         volumePanel.setPreferredSize(new Dimension(230, 20));
         volumePanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 
         JPanel pricePanel = new JPanel(new GridLayout());
         pricePanel.add(priceLabel);
         pricePanel.add(priceField);
-//        pricePanel.setBackground(brewery.getColor());
         pricePanel.setPreferredSize(new Dimension(230, 20));
         pricePanel.setBorder(BorderFactory.createLineBorder(Color.WHITE));
 
@@ -149,7 +143,6 @@ public class addBeerUi extends JFrame implements ActionListener {
         JLabel recipeWaterAmountLabel = new JLabel("Water Amount (L)");
         JLabel recipeSugarAmountLabel = new JLabel("Sugar Amount (g)");
         JLabel recipeExtraAmountLabel = new JLabel("Amount (Kg/L)");
-
 
         recipeNameField = new JTextField();
         recipeNameField.setPreferredSize(new Dimension(140, 15));
@@ -185,82 +178,68 @@ public class addBeerUi extends JFrame implements ActionListener {
         JPanel recipeNamePanel = new JPanel(new GridLayout());
         recipeNamePanel.add(recipeNameLabel);
         recipeNamePanel.add(recipeNameField);
-//        recipeNamePanel.setBackground(Color.GREEN);
         recipeNamePanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeDescriptionPanel = new JPanel(new GridLayout(1,0,0,0));
         JScrollPane scrollPane = new JScrollPane(recipeDescriptionField);
-//        recipeDescriptionPanel.add(recipeDescriptionLabel);
         recipeDescriptionPanel.add(scrollPane);
-//        recipeDescriptionPanel.setBackground(Color.GREEN);
         recipeDescriptionPanel.setPreferredSize(new Dimension(230, 110));
         recipeDescriptionPanel.setBackground(Color.BLUE);
 
         JPanel recipeMaltPanel = new JPanel(new GridLayout());
         recipeMaltPanel.add(recipeMaltLabel);
         recipeMaltPanel.add(recipeMaltField);
-//        recipeMaltPanel.setBackground(Color.GREEN);
         recipeMaltPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeMaltAmountPanel = new JPanel(new GridLayout());
         recipeMaltAmountPanel.add(recipeMaltAmountLabel);
         recipeMaltAmountPanel.add(recipeMaltAmountField);
-//        recipeMaltAmountPanel.setBackground(Color.GREEN);
         recipeMaltAmountPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeHopsPanel = new JPanel(new GridLayout());
         recipeHopsPanel.add(recipeHopsLabel);
         recipeHopsPanel.add(recipeHopsField);
-//        recipeHopsPanel.setBackground(Color.GREEN);
         recipeHopsPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeHopsAmountPanel = new JPanel(new GridLayout());
         recipeHopsAmountPanel.add(recipeHopsAmountLabel);
         recipeHopsAmountPanel.add(recipeHopsAmountField);
-//        recipeHopsAmountPanel.setBackground(Color.GREEN);
         recipeHopsAmountPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeYeastPanel = new JPanel(new GridLayout());
         recipeYeastPanel.add(recipeYeastLabel);
         recipeYeastPanel.add(recipeYeastField);
-//        recipeYeastPanel.setBackground(Color.GREEN);
         recipeYeastPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeYeastAmountPanel = new JPanel(new GridLayout());
         recipeYeastAmountPanel.add(recipeYeastAmountLabel);
         recipeYeastAmountPanel.add(recipeYeastAmountField);
-//        recipeYeastAmountPanel.setBackground(Color.GREEN);
         recipeYeastAmountPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeWaterAmountPanel = new JPanel(new GridLayout());
         recipeWaterAmountPanel.add(recipeWaterAmountLabel);
         recipeWaterAmountPanel.add(recipeWaterAmountField);
-//        recipeWaterAmountPanel.setBackground(Color.GREEN);
         recipeWaterAmountPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeSugarAmountPanel = new JPanel(new GridLayout());
         recipeSugarAmountPanel.add(recipeSugarAmountLabel);
         recipeSugarAmountPanel.add(recipeSugarAmountField);
-//        recipeSugarAmountPanel.setBackground(Color.GREEN);
         recipeSugarAmountPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeExtraPanel = new JPanel(new GridLayout());
         recipeExtraPanel.add(recipeExtraLabel);
         recipeExtraPanel.add(recipeExtraField);
-//        recipeExtraPanel.setBackground(Color.GREEN);
         recipeExtraPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel recipeExtraAmountPanel = new JPanel(new GridLayout());
         recipeExtraAmountPanel.add(recipeExtraAmountLabel);
         recipeExtraAmountPanel.add(recipeExtraAmountField);
-//        recipeExtraAmountPanel.setBackground(Color.GREEN);
         recipeExtraAmountPanel.setPreferredSize(new Dimension(230, 20));
 
         JPanel addExtraIngredientPanel = new JPanel(new GridLayout());
         addIngredient = new JButton("Add Ingredient");
         addIngredient.addActionListener(this);
         addExtraIngredientPanel.add(addIngredient);
-//        addExtraIngredientPanel.setBackground(Color.GREEN);
         addExtraIngredientPanel.setPreferredSize(new Dimension(230, 20));
 
         extraIngredients = new ArrayList<>();
@@ -272,12 +251,10 @@ public class addBeerUi extends JFrame implements ActionListener {
 
         JPanel submitRecipePanel = new JPanel(new GridLayout());
         submitRecipePanel.add(submitRecipe);
-//        submitRecipePanel.setBackground(Color.GREEN);
         submitRecipePanel.setPreferredSize(new Dimension(230, 50));
 
         JPanel submitBeerPanel = new JPanel(new GridLayout());
         submitBeerPanel.add(submitBeer);
-//        submitBeerPanel.setBackground(Color.GREEN);
         submitBeerPanel.setPreferredSize(new Dimension(230, 50));
         submitBeer.setEnabled(false);
 
@@ -285,8 +262,6 @@ public class addBeerUi extends JFrame implements ActionListener {
         JPanel beerPanel = new JPanel(new FlowLayout());
         JPanel recipePanel = new JPanel(new FlowLayout());
         getContentPane().setBackground(Color.ORANGE);
-//        beerPanel.setBackground(Color.BLUE);
-//        recipePanel.setBackground(Color.RED);
         beerPanel.setPreferredSize(new Dimension(290, 600));
         recipePanel.setPreferredSize(new Dimension(290, 600));
 

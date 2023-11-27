@@ -4,6 +4,7 @@ import Recipe.Ingredient;
 import Recipe.Recipe;
 
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -121,9 +122,11 @@ public class RecipeUi extends JFrame {
             recipeCell.add(ingredientsPanel);
             contentList.add(recipeCell);
         }
+
         JScrollPane recipeListScroll = new JScrollPane(contentList);
         recipeListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         recipeListScroll.setPreferredSize(new Dimension(600, 600));
+        recipeListScroll.getVerticalScrollBar().setUnitIncrement(16);
         add(recipeListScroll, BorderLayout.CENTER);
         returnedPanel.add(recipeListScroll);
         setVisible(true);

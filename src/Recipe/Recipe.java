@@ -3,14 +3,14 @@ package Recipe;
 import java.util.ArrayList;
 
 public class Recipe implements java.io.Serializable{
-    private String recipeName;
+    private final String recipeName;
     private String description;
-    private Ingredient malt;
-    private Ingredient hops;
-    private Ingredient yeast;
-    private Ingredient water;
-    private Ingredient sugar;
-    private ArrayList<Ingredient> ingredients;
+    private final Ingredient malt;
+    private final Ingredient hops;
+    private final Ingredient yeast;
+    private final Ingredient water;
+    private final Ingredient sugar;
+    private final ArrayList<Ingredient> ingredients;
 
     public Recipe(String styleName, Ingredient malt, Ingredient hops, Ingredient yeast, Ingredient water, Ingredient sugar) {
         this.recipeName = styleName;
@@ -20,7 +20,7 @@ public class Recipe implements java.io.Serializable{
         this.yeast = yeast;
         this.water = water;
         this.sugar = sugar;
-        this.ingredients = new ArrayList<Ingredient>();
+        this.ingredients = new ArrayList<>();
     }
 
     public String getStyleName() {

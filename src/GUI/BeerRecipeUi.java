@@ -37,16 +37,12 @@ public class BeerRecipeUi extends JFrame {
         textAreaDescription.setOpaque(false);
         textAreaDescription.setBorder(null);
 
-        // Create a JScrollPane for the description
         JScrollPane descriptionScrollPane = new JScrollPane(textAreaDescription);
         descriptionScrollPane.setPreferredSize(new Dimension(380, 270));
 
         JPanel MainIngredientsPanel = new JPanel(new GridLayout(0,2,0,0));
-//        JPanel TopPanel = new JPanel(new GridLayout(0,1,0,0));
         JPanel TopPanel = new JPanel(new FlowLayout());
         TopPanel.setPreferredSize(new Dimension(380, 100));
-
-
 
         JLabel labelMaltName = new JLabel("Malt: " + recipe.getMalt().getName() + " | " + recipe.getMalt().getQuantity() + " kg");
         labelMaltName.setFont(uniformFont);
@@ -64,10 +60,7 @@ public class BeerRecipeUi extends JFrame {
 
         ArrayList<Ingredient> ingredients = recipe.getIngredients();
 
-        // Create a JPanel to hold the ingredient labels
         JPanel ingredientPanel = new JPanel(new GridLayout(0,1,0,0));
-
-
 
         MainIngredientsPanel.add(labelMaltName);
         MainIngredientsPanel.add(labelHopsName);
@@ -84,17 +77,14 @@ public class BeerRecipeUi extends JFrame {
 
         JScrollPane MainIngredientsScrollPane = new JScrollPane(MainIngredientsPanel);
 
-        // Create a JScrollPane for the ingredients
         JScrollPane ingredientScrollPane = new JScrollPane(ingredientPanel);
         ingredientScrollPane.setPreferredSize(new Dimension(550, 350));
-
 
         TopPanel.add(labelStyleName);
         TopPanel.add(descriptionScrollPane);
 
         add(TopPanel);
         add(MainIngredientsScrollPane);
-//        add(ingredientScrollPane);
 
         setVisible(true);
     }

@@ -3,13 +3,13 @@ package Stockpile;
 import Recipe.Recipe;
 
 public class Beer implements java.io.Serializable{
-    private String StyleName;
-    private String type;
-    private double abv;
-    private double ibu;
-    private double volume;
-    private double price;
-    private Recipe recipe;
+    private final String StyleName;
+    private final String type;
+    private final double abv;
+    private final double ibu;
+    private final double volume;
+    private final double price;
+    private final Recipe recipe;
 
     public Beer(String styleName, String type, double abv, double ibu, double volume, double price, Recipe recipe) {
         StyleName = styleName;

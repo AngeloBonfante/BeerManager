@@ -44,11 +44,23 @@ public class BeersDisplayPanel extends JFrame {
                 beerStyle.setHorizontalAlignment(JLabel.CENTER);
                 beerStyle.setFont(new Font(beerStyle.getFont().getName(), beerStyle.getFont().getStyle(), 20));
                 beerCell.add(beerStyle);
-                JLabel beerVolume = new JLabel(brewery.getStockpile().get(i).getVolume() + "L");
+
+                JLabel beerAbv = new JLabel( "ABV: "+ brewery.getStockpile().get(i).getAbv() + "%");
+                beerAbv.setHorizontalAlignment(JLabel.CENTER);
+                beerAbv.setFont(new Font(beerAbv.getFont().getName(), beerAbv.getFont().getStyle(), 20));
+                beerCell.add(beerAbv);
+
+                JLabel beerIbu = new JLabel(" IBU: " + brewery.getStockpile().get(i).getIbu());
+                beerIbu.setHorizontalAlignment(JLabel.CENTER);
+                beerIbu.setFont(new Font(beerIbu.getFont().getName(), beerIbu.getFont().getStyle(), 20));
+                beerCell.add(beerIbu);
+
+
+                JLabel beerVolume = new JLabel(brewery.getStockpile().get(i).getVolume() + " L");
                 beerVolume.setHorizontalAlignment(JLabel.CENTER);
                 beerVolume.setFont(new Font(beerVolume.getFont().getName(), beerVolume.getFont().getStyle(), 20));
                 beerCell.add(beerVolume);
-                JLabel beerPrice = new JLabel(brewery.getStockpile().get(i).getPrice() + "$");
+                JLabel beerPrice = new JLabel(brewery.getStockpile().get(i).getPrice() + "$/un");
                 beerPrice.setFont(new Font(beerPrice.getFont().getName(), beerPrice.getFont().getStyle(), 20));
                 beerPrice.setHorizontalAlignment(JLabel.CENTER);
                 beerCell.add(beerPrice);
@@ -99,14 +111,13 @@ public class BeersDisplayPanel extends JFrame {
 
             JScrollPane beerListScroll = new JScrollPane(contentList);
             beerListScroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+            beerListScroll.getVerticalScrollBar().setUnitIncrement(16);
             beerListScroll.setPreferredSize(new Dimension(600, 600));
             add(beerListScroll, BorderLayout.CENTER);
 
             returnedPanel.add(beerListScroll);
             setVisible(true);
         }
-
-
 
         public JPanel getReturnedPanel(){
             return returnedPanel;
