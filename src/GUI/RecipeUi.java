@@ -67,31 +67,31 @@ public class RecipeUi extends JFrame {
 
             JPanel ingredientsPanel = new JPanel(new GridLayout(0,2,0,0));
 
-            JLabel labelMaltName = new JLabel("Malt: " + recipe.getMalt().getName() + recipe.getMalt().getQuantity() + " kg");
+            JLabel labelMaltName = new JLabel("Malt: " + " " + recipe.getMalt().getName() + " " + recipe.getMalt().getQuantity() + " kg");
             labelMaltName.setFont(labelFont);
             labelMaltName.setForeground(Color.BLUE);
             labelMaltName.setHorizontalAlignment(JLabel.CENTER);
             ingredientsPanel.add(labelMaltName);
 
-            JLabel labelHopsName = new JLabel("Hops: " + recipe.getHops().getName() + recipe.getHops().getQuantity() + " kg");
+            JLabel labelHopsName = new JLabel("Hops: " + recipe.getHops().getName() + " " + recipe.getHops().getQuantity() + " kg");
             labelHopsName.setFont(labelFont);
             labelHopsName.setForeground(Color.BLUE);
             labelHopsName.setHorizontalAlignment(JLabel.CENTER);
             ingredientsPanel.add(labelHopsName);
 
-            JLabel labelYeastName = new JLabel("Yeast: " + recipe.getYeast().getName() + recipe.getYeast().getQuantity() + " kg");
+            JLabel labelYeastName = new JLabel("Yeast: " + recipe.getYeast().getName() + " " + recipe.getYeast().getQuantity() + " kg");
             labelYeastName.setFont(labelFont);
             labelYeastName.setForeground(Color.BLUE);
             labelYeastName.setHorizontalAlignment(JLabel.CENTER);
             ingredientsPanel.add(labelYeastName);
 
-            JLabel labelWaterName = new JLabel("Water: " + recipe.getWater().getQuantity() + "L");
+            JLabel labelWaterName = new JLabel("Water: " + " " + recipe.getWater().getQuantity() + " L");
             labelWaterName.setFont(labelFont);
             labelWaterName.setForeground(Color.BLUE);
             labelWaterName.setHorizontalAlignment(JLabel.CENTER);
             ingredientsPanel.add(labelWaterName);
 
-            JLabel labelSugarName = new JLabel("Sugar: " + recipe.getSugar().getQuantity() + "kg");
+            JLabel labelSugarName = new JLabel("Sugar: " + " " + recipe.getSugar().getQuantity() + " kg");
             labelSugarName.setFont(labelFont);
             labelSugarName.setForeground(Color.BLUE);
             labelSugarName.setHorizontalAlignment(JLabel.CENTER);

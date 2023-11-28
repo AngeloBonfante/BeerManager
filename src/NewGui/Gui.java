@@ -47,10 +47,10 @@ public class Gui extends JFrame implements MouseListener{
         JMenuItem buttonColor = new JMenuItem("Button Color");
         JMenuItem addDummyBeer = new JMenuItem("Add Dummy Beers");
 
-        saveMenuItem.addActionListener(e -> brewery.save("Saved/Brewery.beer"));
+        saveMenuItem.addActionListener(e -> brewery.save("Saved/save.beer"));
 
         loadMenuItem.addActionListener(e -> {
-            this.brewery = brewery.load("Saved/Brewery.beer");
+            this.brewery = brewery.load("Saved/save.beer");
             this.dispose();
             new Gui(this.brewery);
 
@@ -94,9 +94,7 @@ public class Gui extends JFrame implements MouseListener{
         });
 
         addDummyBeer.addActionListener(
-                e->{
-                    brewery.createDummyFile();
-                }
+                e-> brewery.createDummyFile()
         );
 
         fileMenu.add(New);

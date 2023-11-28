@@ -69,7 +69,7 @@ public class BeerRecipeUi extends JFrame {
         MainIngredientsPanel.add(labelSugarName);
 
         for(Ingredient ingredient : ingredients) {
-            JLabel labelIngredientName = new JLabel(ingredient.getName() + ": " + ingredient.getQuantity() + " kg");
+            JLabel labelIngredientName = new JLabel(ingredient.getName() + ": " + ingredient.getQuantity() + " " + "kg");
             labelIngredientName.setFont(uniformFont);
             ingredientPanel.add(labelIngredientName);
             MainIngredientsPanel.add(labelIngredientName);

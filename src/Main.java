@@ -7,8 +7,4 @@ public class Main {
         brewery.createDummyFile();
         new Gui(brewery);
     }
-
-
-
-
 }
