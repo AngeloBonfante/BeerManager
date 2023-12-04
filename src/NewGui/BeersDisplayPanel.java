@@ -27,7 +27,7 @@ public class BeersDisplayPanel extends JFrame {
 
             returnedPanel = new JPanel(new GridLayout(0,1,0,0));
 
-            for(int i = 0; i < brewery.getStockpile().size(); i++){
+            for(int i = brewery.getStockpile().size() - 1; i >= 0; i--){
 
                 JPanel beerCell = new JPanel(new GridLayout(0,1,0,0));
                 beerCell.setPreferredSize(new Dimension(250, 300));

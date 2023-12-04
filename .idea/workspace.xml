@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="save folder">
+    <list default="true" id="605cbe9e-8d2d-4407-964c-da4ce3a07fd4" name="Changes" comment="save">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/BeerRecipeUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/RecipeUi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/RecipeUi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewGui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NewGui/BeersDisplayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NewGui/BeersDisplayPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,9 @@
       <workItem from="1701072656373" duration="140000" />
       <workItem from="1701072826992" duration="1306000" />
       <workItem from="1701129441319" duration="3294000" />
-      <workItem from="1701204078927" duration="2261000" />
+      <workItem from="1701204078927" duration="3991000" />
+      <workItem from="1701698034053" duration="256000" />
+      <workItem from="1701698317737" duration="533000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up">
       <option name="closed" value="true" />
@@ -229,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701072998593</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="save">
+      <option name="closed" value="true" />
+      <created>1701211458847</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701211458847</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +273,7 @@
     <MESSAGE value="Scripts + final fixes" />
     <MESSAGE value=".idea" />
     <MESSAGE value="save folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="save folder" />
+    <MESSAGE value="save" />
+    <option name="LAST_COMMIT_MESSAGE" value="save" />
   </component>
 </project>
