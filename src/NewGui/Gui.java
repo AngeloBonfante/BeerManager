@@ -167,7 +167,7 @@ public class Gui extends JFrame implements MouseListener{
         this.add(mainContentPanel, BorderLayout.CENTER);
         this.add(sidePanelArea, BorderLayout.WEST);
 
-        renderIngredients();
+        //renderIngredients();
         setVisible(true);
     }
 
